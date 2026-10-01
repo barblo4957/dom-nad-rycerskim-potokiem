@@ -1,9 +1,5 @@
 <script lang="ts">
 	import { contactCopy, nap, onlinePresence } from '$lib/data/site';
-	import { resolvePending } from '$lib/data/pending';
-	import Note from '$lib/components/Note.svelte';
-
-	const geo = resolvePending(nap.geo);
 </script>
 
 <section id="kontakt" class="bg-forest text-on-forest">
@@ -32,18 +28,9 @@
 			<span>{nap.street}</span>
 			<span>{nap.postalCode} {nap.city}</span>
 			<span>{nap.region}</span>
-			{#if geo}
-				<span class="mt-2 font-mono text-[0.8rem] text-on-forest/65">{geo.lat}, {geo.lng}</span>
-				<a
-					href="https://www.google.com/maps?q={geo.lat},{geo.lng}"
-					target="_blank"
-					rel="noopener"
-					class="text-on-forest underline"
-				>
-					Otwórz w Mapach Google
-				</a>
-			{/if}
-			{#if nap.geo.pending}<Note>{nap.geo.pending}</Note>{/if}
+			<a href={nap.mapsUrl} target="_blank" rel="noopener" class="mt-2 text-on-forest underline">
+				Otwórz w Mapach Google
+			</a>
 		</address>
 	</div>
 </section>

@@ -19,8 +19,10 @@ export const nap = {
 	name: 'Dom nad Rycerskim Potokiem',
 	street: 'Rycerka Górna 359D',
 	postalCode: '34-370',
-	city: 'Rajcza',
-	addressLine: 'Rycerka Górna 359D, 34-370 Rajcza',
+	// Adres zgodny z wizytówką Google Maps (potwierdzone) — Booking/nocowanie.pl
+	// mają rozjazdy w nazwie miejscowości, do ujednolicenia tam (patrz docs/context.md §10).
+	city: 'Rycerka Górna',
+	addressLine: 'Rycerka Górna 359D, 34-370 Rycerka Górna',
 	region: 'gm. Rajcza, pow. żywiecki, woj. śląskie',
 	area: 'Beskid Żywiecki, Żywiecki Park Krajobrazowy',
 	elevationM: { min: 600, max: 650 },
@@ -28,28 +30,24 @@ export const nap = {
 	phoneTel: 'tel:+48604278378',
 	host: 'Pani Justyna',
 	language: 'polski',
-	geo: unconfirmed(
-		{ lat: 49.431309, lng: 19.0122694 },
-		'Współrzędne z otonoclegi.pl — zweryfikować pinezkę w Google Maps przed publikacją.',
-		{ lat: 49.431309, lng: 19.0122694 }
-	),
-	get mapsUrl() {
-		return `https://www.google.com/maps?q=${nap.geo.value.lat},${nap.geo.value.lng}`;
-	}
+	// Współrzędne pomocnicze (dla JSON-LD geo) — potwierdzone, zgodne z pinezką Google.
+	geo: { lat: 49.431309, lng: 19.0122694 },
+	// Wizytówka Google Maps (potwierdzona) — główny link do mapy w całym serwisie.
+	mapsUrl: 'https://www.google.com/maps?cid=9828009508709434931'
 };
 
 // --- Hero / About copy (koncept/index.html) --------------------------------
 
 export const hero = {
 	eyebrow: 'Rycerka Górna · Beskid Żywiecki',
-	titlePrefix: 'Całoroczny dom dla 14 osób nad',
+	titlePrefix: 'Całoroczny dom dla 12 osób nad',
 	titleEmphasis: 'Rycerskim Potokiem',
 	lead: 'Dwa apartamenty, ogrodzony ogród i potok, który opływa działkę. Szlak na Wielką Raczę zaczyna się przy furtce.',
-	chips: ['14 miejsc · 2 apartamenty', 'Psy mile widziane', 'Basen latem', 'Parking na 5 aut', 'Przystanek 50 m']
+	chips: ['12 miejsc · 2 apartamenty', 'Psy mile widziane', 'Basen latem', 'Parking na 5 aut', 'Przystanek 50 m']
 };
 
 export const facts = [
-	{ value: '14', label: 'miejsc noclegowych' },
+	{ value: '12', label: 'miejsc noclegowych' },
 	{ value: '3,7 km', label: 'do Wielkiej Raczy' },
 	{ value: '50 m', label: 'do przystanku autobusowego' },
 	{ value: '1 km', label: 'do sklepu spożywczego' }
@@ -60,8 +58,8 @@ export const about = {
 	title: 'Szum potoku zamiast miejskiego hałasu',
 	paragraphs: [
 		'Wolnostojący dom z parterem i poddaszem stoi na ogrodzonej działce w Rycerce Górnej, w Żywieckim Parku Krajobrazowym. Z jednej strony płynie Rycerski Potok, za nim zaczyna się las, w którym latem zbiera się jagody i grzyby.',
-		'Wynajmujemy cały dom dla grupy do 14 osób albo jeden z dwóch apartamentów. W ogrodzie jest taras, altana z grillem, miejsce na ognisko, plac zabaw i mały basen, czynny w sezonie letnim.',
-		'Zasięg komórkowy bywa tu słaby. Goście piszą, że to część uroku tego miejsca.'
+		'Wynajmujemy cały dom dla grupy do 12 osób albo jeden z dwóch apartamentów. W ogrodzie jest taras, altana z grillem, miejsce na ognisko, plac zabaw i mały basen, czynny w sezonie letnim.',
+		'Zasięg komórkowy bywa tu słaby, ale w domu działa Wi-Fi.'
 	]
 };
 
@@ -69,7 +67,7 @@ export const about = {
 
 export const offer = {
 	description: 'Dom całoroczny, wolnostojący, parter + poddasze.',
-	totalBeds: 14,
+	totalBeds: 12,
 	apartmentsCount: 2,
 	priceNote: 'Ceny są orientacyjne i zależą od liczby osób. Zadzwoń, a gospodyni poda dokładną kwotę na wybrany termin.'
 };
@@ -98,30 +96,22 @@ export const apartments: Apartment[] = [
 		capacity: confirmed('do 10 osób · 4 sypialnie'),
 		priceFrom: 900,
 		priceUnit: 'noc',
-		beds: unconfirmed(
-			[
-				'sypialnia 1: łóżko podwójne + sofa rozkładana',
-				'sypialnia 2: 2 sofy rozkładane',
-				'sypialnia 3: łóżko podwójne',
-				'sypialnia 4: łóżko podwójne + sofa rozkładana',
-				'dodatkowo: sofa rozkładana'
-			],
-			'Booking pokazuje 5 pozycji przy 4 sypialniach — potwierdzić przypisanie łóżek do pokoi.',
-			[
-				'sypialnia 1: łóżko podwójne + sofa rozkładana',
-				'sypialnia 2: 2 sofy rozkładane',
-				'sypialnia 3: łóżko podwójne',
-				'sypialnia 4: łóżko podwójne + sofa rozkładana',
-				'dodatkowo: sofa rozkładana'
-			]
-		),
+		// Potwierdzone przez właścicielkę: to 4 sypialnie + salon (salon nie jest
+		// sypialnią, ma sofę rozkładaną) — stąd 5 pozycji przy "4 sypialniach" na Booking.
+		beds: confirmed([
+			'sypialnia 1: łóżko podwójne + sofa rozkładana',
+			'sypialnia 2: 2 sofy rozkładane',
+			'sypialnia 3: łóżko podwójne',
+			'sypialnia 4: łóżko podwójne + sofa rozkładana',
+			'salon: sofa rozkładana'
+		]),
 		groups: [
 			{
 				title: 'Kuchnia',
 				items: ['kuchenka elektryczna z piekarnikiem', 'lodówka', 'zmywarka', 'mikrofala', 'czajnik', 'toster', 'naczynia']
 			},
 			{ title: 'Łazienka', items: ['łazienka + osobna toaleta'] },
-			{ title: 'Salon i balkon', items: ['hol/salon z TV', 'balkon'] }
+			{ title: 'Salon i balkon', items: ['Wi-Fi', 'hol/salon z TV', 'balkon'] }
 		]
 	},
 	{
@@ -129,16 +119,11 @@ export const apartments: Apartment[] = [
 		name: 'Apartament mały',
 		areaM2: 26,
 		// To nie osobna sypialnia — otwarta przestrzeń z wnęką sypialną, częścią
-		// dzienną i aneksem kuchennym. Potwierdzone przez właścicielkę.
-		layoutNote: 'Otwarta przestrzeń z wnęką sypialną, częścią dzienną i aneksem kuchennym.',
-		// Pojemność pozostaje pending: Booking podaje 2 osoby, nocowanie.pl 2–4.
-		// Układ (wnęka sypialna, 2 sofy rozkładane) jest już potwierdzony przez
-		// właścicielkę, niezależnie od sporu o pojemność.
-		capacity: unconfirmed(
-			'2–4 osoby',
-			'Booking podaje 2 osoby, nocowanie.pl 2–4 osoby. Ustalić z właścicielką faktyczną pojemność i ujednolicić ogłoszenia.',
-			'2 osoby'
-		),
+		// dzienną i aneksem kuchennym. Potwierdzone przez właścicielkę, tak jak
+		// pojemność (2 osoby + możliwa dostawka dla dziecka, maks. 2 dorosłych).
+		layoutNote:
+			'Otwarta przestrzeń z wnęką sypialną, częścią dzienną i aneksem kuchennym. Maksymalnie 2 dorosłych.',
+		capacity: confirmed('2 osoby (+ dziecko)'),
 		priceFrom: 360,
 		priceUnit: 'noc',
 		beds: confirmed(['wnęka sypialna: 2 sofy rozkładane']),
@@ -161,6 +146,7 @@ export const apartments: Apartment[] = [
 			{
 				title: 'W apartamencie',
 				items: [
+					'Wi-Fi',
 					'TV z płaskim ekranem',
 					'biurko',
 					'żelazko',
@@ -181,7 +167,7 @@ export const apartments: Apartment[] = [
 ];
 
 export const wholeHouse = {
-	title: 'Cały dom dla grupy do 14 osób',
+	title: 'Cały dom dla grupy do 12 osób',
 	description:
 		'Rodzinne zjazdy, wyjazdy ze znajomymi, grupy turystyczne. Dwa niezależne apartamenty pod jednym dachem i wspólny ogród.'
 };
@@ -200,6 +186,7 @@ export const amenities = {
 	],
 	pool: ['odkryty, czynny latem (sezonowy)', 'bezpłatny dla gości w każdym wieku', 'leżaki'],
 	inApartments: [
+		'Wi-Fi',
 		'TV z płaskim ekranem',
 		'sofa, część jadalna i wypoczynkowa',
 		'biurko',
@@ -221,10 +208,6 @@ export const amenities = {
 	],
 	other: ['całkowity zakaz palenia w środku (wyznaczone miejsca na zewnątrz)', 'indywidualne zameldowanie/wymeldowanie'],
 	views: ['potok', 'góry', 'ogród', 'basen'],
-	internet: unconfirmed<null>(
-		null,
-		'Rozbieżność: nocowanie.pl podaje światłowód; opinia gościa (Petra) na Booking — darmowe Wi-Fi; Booking w udogodnieniach — „Połączenie z Internetem nie jest dostępne". Ustalić faktyczny stan i poprawić w panelu Booking.'
-	),
 	meals: unconfirmed(
 		'Domowe obiady z dowozem do domu, polecane przez gospodarzy.',
 		'Potwierdzić, czy usługa nadal aktualna.'
@@ -235,11 +218,9 @@ export const dog = {
 	title: 'Nocleg z psem w Beskidzie Żywieckim',
 	description:
 		'Teren jest ogrodzony, więc pies może swobodnie biegać po ogrodzie. Na miejscu czekają miski i legowisko. Szlaki zaczynają się kilka kroków od domu.',
-	// Brak publicValue: sporna stawka (10 zł vs „bez opłat") nie trafia na produkcję.
-	fee: unconfirmed<null>(
-		null,
-		'Rozbieżność: nocowanie.pl — 10 zł/doba; Booking — „bez dodatkowych opłat". Ujednolicić przed publikacją.'
-	)
+	// Potwierdzone przez właścicielkę: bez dodatkowych opłat. nocowanie.pl ma
+	// wpisane 10 zł/doba — do usunięcia w ogłoszeniu (patrz docs/context.md §10).
+	fee: confirmed('bez dodatkowych opłat')
 };
 
 // --- Zasady rezerwacji i FAQ (docs/context.md §4) ---------------------------
@@ -280,11 +261,13 @@ export const faq: FaqItem[] = [
 	},
 	{
 		question: 'Czy w domu jest internet?',
-		answer: unconfirmed('', 'Odpowiedź zależy od potwierdzenia Wi-Fi — patrz amenities.internet.')
+		answer: confirmed('Tak, w domu jest internet Wi-Fi.')
 	},
 	{
 		question: 'Ile osób zmieści się w domu?',
-		answer: confirmed('Do 14 osób w dwóch apartamentach: większym do 10 osób i mniejszym do 4 osób.')
+		answer: confirmed(
+			'Do 12 osób w dwóch apartamentach: większym do 10 osób i mniejszym do 2 osób (plus możliwa dostawka dla dziecka).'
+		)
 	},
 	{
 		question: 'Czy dom jest czynny zimą?',
@@ -394,8 +377,23 @@ export const cellSignalNote = 'Słaby lub brak zasięgu komórkowego w okolicy (
 
 export const reviews = {
 	scores: [
-		{ source: 'nocowanie.pl', rating: '9,3', label: 'Rewelacyjny', count: 15 },
-		{ source: 'Booking.com', rating: '8,3', label: 'Bardzo dobry', count: 3 }
+		{ source: 'nocowanie.pl', rating: '9,3', label: 'Rewelacyjny', count: 15, url: undefined, linkLabel: '' },
+		{
+			source: 'Booking.com',
+			rating: '8,3',
+			label: 'Bardzo dobry',
+			count: 3,
+			url: 'https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html',
+			linkLabel: 'zobacz opinie na Booking.com'
+		},
+		{
+			source: 'Google',
+			rating: '5,0',
+			label: '',
+			count: 3,
+			url: nap.mapsUrl,
+			linkLabel: 'zobacz wizytówkę Google'
+		}
 	],
 	bookingSubscores: [
 		{ label: 'Personel', value: '10' },
@@ -425,10 +423,26 @@ export const reviews = {
 		{ title: 'Przyjazny psom', description: 'Goście regularnie przyjeżdżają z psami.' },
 		{ title: 'Dojazd bez auta', description: 'Przystanek autobusowy jest praktycznie naprzeciw domu.' }
 	],
-	fullQuotes: unconfirmed<{ name: string; source: string; quote: string }[]>(
-		[],
-		'Zebrać od właścicielki zgodę i wybrać 3–4 pełne opinie (imię + źródło) do sekcji referencji.'
-	)
+	// Zgoda właścicielki potwierdzona — dokładne cytaty, imię + inicjał, źródło Google.
+	fullQuotes: confirmed([
+		{
+			name: 'Justyna B.',
+			source: 'Google',
+			quote:
+				'Bardzo przytulny domek w górach, dobrze wyposażony i zadbany, dzięki czemu pobyt był naprawdę komfortowy.'
+		},
+		{
+			name: 'Ela P.',
+			source: 'Google',
+			quote:
+				'Obiekt nad samym potokiem nieopodal głównej drogi przy rostaju szlaków żółtego i zielonego w otoczeniu drzew. Bardzo sympatyczni gospodarze super kontakt. Na wyposażeniu wszystko co niezbędne. Byliśmy zachwyceni miejscem i otoczeniem. Polecamy wszystkim miłośnikom przyrody i spokoju oraz lubiącym wycieczki po górach. Obiekt bardzo przyjazny czworonogom.'
+		},
+		{
+			name: 'Wojtek C.',
+			source: 'Google',
+			quote: 'Bardzo przyjemny pobyt. Lokalizacja idealna i kontakt z właścicielką na wysokim poziomie.'
+		}
+	])
 };
 
 // --- Media (docs/context.md §7) ---------------------------------------------
@@ -462,7 +476,7 @@ export const onlinePresence = {
 export const seoPhrases = [
 	'nocleg Rycerka Górna',
 	'domek Rycerka Górna',
-	'dom do wynajęcia 14 osób Beskid Żywiecki',
+	'dom do wynajęcia 12 osób Beskid Żywiecki',
 	'dom dla dużej grupy Beskidy',
 	'apartament Rycerka Górna',
 	'nocleg z psem Beskid Żywiecki',
@@ -480,7 +494,7 @@ export const seoPhrases = [
 export const meta = {
 	title: 'Dom nad Rycerskim Potokiem — nocleg Rycerka Górna, Beskid Żywiecki',
 	description:
-		'Całoroczny dom dla 14 osób w Rycerce Górnej, Beskid Żywiecki. Dwa apartamenty nad potokiem, basen latem, psy mile widziane. Rezerwacja bezpośrednio u gospodyni.'
+		'Całoroczny dom dla 12 osób w Rycerce Górnej, Beskid Żywiecki. Dwa apartamenty nad potokiem, basen latem, psy mile widziane. Rezerwacja bezpośrednio u gospodyni.'
 };
 
 // --- Kontakt (koncept/index.html) -------------------------------------------

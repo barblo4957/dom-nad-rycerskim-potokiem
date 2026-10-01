@@ -42,11 +42,6 @@
 							{#snippet children(meals)}{meals}{/snippet}
 						</Pending>
 					</li>
-					<li>
-						<Pending field={amenities.internet}>
-							{#snippet children(internet)}Internet: {internet}{/snippet}
-						</Pending>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -68,7 +63,7 @@
 				<p class="mt-2 text-muted">
 					Opłata za psa:
 					<Pending field={dog.fee}>
-						{#snippet children(fee)}{fee} zł/doba{/snippet}
+						{#snippet children(fee)}{fee}{/snippet}
 						{#snippet empty()}zapytaj telefonicznie{/snippet}
 					</Pending>
 				</p>

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { nap, meta, reviews, visibleFaq, siteUrl, onlinePresence } from '$lib/data/site';
-	import { resolvePending, showNotes } from '$lib/data/pending';
+	import { showNotes } from '$lib/data/pending';
 
-	const geo = resolvePending(nap.geo);
 	const canonical = siteUrl ? `${siteUrl}/` : undefined;
 
 	const nocowanieScore = reviews.scores.find((s) => s.source === 'nocowanie.pl');
@@ -23,7 +22,7 @@
 		description: meta.description,
 		telephone: nap.phone,
 		...(canonical ? { url: canonical } : {}),
-		sameAs: [onlinePresence.bookingUrl],
+		sameAs: [onlinePresence.bookingUrl, nap.mapsUrl],
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: nap.street,
@@ -32,15 +31,11 @@
 			addressRegion: 'śląskie',
 			addressCountry: 'PL'
 		},
-		...(geo
-			? {
-					geo: {
-						'@type': 'GeoCoordinates',
-						latitude: geo.lat,
-						longitude: geo.lng
-					}
-				}
-			: {}),
+		geo: {
+			'@type': 'GeoCoordinates',
+			latitude: nap.geo.lat,
+			longitude: nap.geo.lng
+		},
 		petsAllowed: true,
 		amenityFeature: amenityFeatures.map((name) => ({
 			'@type': 'LocationFeatureSpecification',

@@ -1,8 +1,5 @@
 <script lang="ts">
 	import { hero, nap } from '$lib/data/site';
-	import { resolvePending } from '$lib/data/pending';
-
-	const geo = resolvePending(nap.geo);
 </script>
 
 <div id="top" class="mx-auto grid max-w-[1120px] items-center gap-8 px-4 py-10 md:grid-cols-[1.05fr_1fr] md:gap-14 md:py-16">
@@ -44,9 +41,7 @@
 			class="absolute inset-0 h-full w-full object-cover"
 		/>
 		<div class="absolute inset-x-3 bottom-3 flex flex-wrap justify-between gap-2 font-mono text-[0.74rem] text-on-forest">
-			{#if geo}
-				<span class="rounded-[3px] bg-forest/70 px-2 py-1">{geo.lat.toFixed(4)}° N, {geo.lng.toFixed(4)}° E</span>
-			{/if}
+			<span class="rounded-[3px] bg-forest/70 px-2 py-1">{nap.geo.lat.toFixed(4)}° N, {nap.geo.lng.toFixed(4)}° E</span>
 			<span class="rounded-[3px] bg-forest/70 px-2 py-1">≈ {nap.elevationM.min}–{nap.elevationM.max} m n.p.m.</span>
 		</div>
 	</div>

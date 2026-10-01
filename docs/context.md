@@ -8,9 +8,11 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 ## 1. NAP (dane kontaktowe — jedna wersja wszędzie)
 
 - Nazwa: **Dom nad Rycerskim Potokiem**
-- Adres: **Rycerka Górna 359D, 34-370 Rajcza** (poczta: Rajcza; Booking podaje „34-370 Rycerka Górna” — ujednolicić)
+- Adres: **Rycerka Górna 359D, 34-370 Rycerka Górna** (zgodnie z wizytówką Google Maps — potwierdzone;
+  Booking i nocowanie.pl mają rozjazdy w nazwie miejscowości, do ujednolicenia tam, patrz §10)
 - Telefon: **+48 604 278 378**
-- Geo (otonoclegi): 49.431309, 19.0122694 ⚠️ zweryfikować pinezkę w Google Maps
+- Mapa: https://www.google.com/maps?cid=9828009508709434931 (wizytówka Google — potwierdzone)
+- Geo (otonoclegi, pomocniczo dla JSON-LD): 49.431309, 19.0122694
 - Region: Beskid Żywiecki, Żywiecki Park Krajobrazowy, gm. Rajcza, pow. żywiecki, woj. śląskie
 - Wysokość: Rycerka Górna leży ok. 600–650 m n.p.m.
 - Gospodyni: Pani Justyna (wymieniana w opiniach)
@@ -20,29 +22,31 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 ## 2. Oferta
 
 - Dom całoroczny, wolnostojący, parter + poddasze
-- **14 miejsc noclegowych**, 2 apartamenty; możliwy wynajem całego domu lub jednego apartamentu
+- **12 miejsc noclegowych** (10 + 2, potwierdzone przez właścicielkę), 2 apartamenty; możliwy wynajem
+  całego domu lub jednego apartamentu
 
 ### Apartament 10-osobowy (Booking: „Apartament z 4 sypialniami i balkonem”)
-- 4 sypialnie, układ łóżek wg Booking:
-  - 1 łóżko podwójne + 1 sofa rozkładana
-  - 2 sofy rozkładane
-  - 1 łóżko podwójne
-  - 1 łóżko podwójne + 1 sofa rozkładana
-  - 1 sofa rozkładana
+- 4 sypialnie + salon (salon nie jest sypialnią, ma sofę rozkładaną — potwierdzone przez właścicielkę;
+  stąd 5 pozycji przy „4 sypialniach” na Booking)
+- Układ łóżek:
+  - sypialnia 1: łóżko podwójne + sofa rozkładana
+  - sypialnia 2: 2 sofy rozkładane
+  - sypialnia 3: łóżko podwójne
+  - sypialnia 4: łóżko podwójne + sofa rozkładana
+  - salon: sofa rozkładana
 - Kuchnia w pełni wyposażona: kuchenka elektryczna z piekarnikiem, lodówka, zmywarka, mikrofala, czajnik, toster, naczynia
-- Łazienka + osobna toaleta, hol/salon z TV
+- Łazienka + osobna toaleta, hol/salon z TV, Wi-Fi
 - Balkon
 
 ### Apartament mały
 - 26 m², otwarta przestrzeń z wnęką sypialną (2 sofy rozkładane), częścią dzienną i aneksem
-  kuchennym — nie osobna sypialnia (potwierdzone przez właściciela ogłoszenia na Booking)
+  kuchennym — nie osobna sypialnia (potwierdzone przez właścicielkę)
+- Pojemność: 2 osoby (+ dziecko), maksymalnie 2 dorosłych — potwierdzone przez właścicielkę
 - Kuchnia: płyta kuchenna, piekarnik, lodówka, mikrofala, czajnik, toster, zestaw do kawy i herbaty,
   przybory kuchenne, stół / część jadalniana
 - Prywatna łazienka: wanna lub prysznic, suszarka do włosów
 - Balkon, taras, patio; widok na ogród, basen, góry i potok
-- TV z płaskim ekranem, biurko, żelazko, wentylator, suszarka do ubrań, gry planszowe, pościel, szafa, ogrzewanie
-- ⚠️ pojemność: Booking podaje 2 osoby, nocowanie.pl 2–4 osoby — ustalić z właścicielką faktyczny stan
-  i poprawić ogłoszenia (do publikacji: bezpieczny wariant „2 osoby”)
+- Wi-Fi, TV z płaskim ekranem, biurko, żelazko, wentylator, suszarka do ubrań, gry planszowe, pościel, szafa, ogrzewanie
 
 ### Ceny (nocowanie.pl)
 - Apartament 4-os.: od 360 zł/noc
@@ -58,12 +62,13 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 
 **Parking:** bezpłatny, prywatny, na terenie, 5 miejsc, bez rezerwacji
 
-**Internet:** ⚠️ ROZBIEŻNOŚĆ — nocowanie: światłowód; opinia na Booking (Petra): darmowe Wi-Fi; **Booking w udogodnieniach: „Połączenie z Internetem nie jest dostępne”** → do poprawy w panelu Booking
+**Internet:** Wi-Fi w domu — potwierdzone przez właścicielkę (Booking ma błędnie zaznaczone
+„Połączenie z Internetem nie jest dostępne” w udogodnieniach — do poprawy, patrz §10)
 
-**Zwierzęta:** psy mile widziane, teren ogrodzony, miski i legowisko dla pupila
-- ⚠️ opłata: nocowanie 10 zł/doba, Booking „bez dodatkowych opłat” — ujednolicić
+**Zwierzęta:** psy mile widziane, teren ogrodzony, miski i legowisko dla pupila, bez dodatkowych
+opłat — potwierdzone przez właścicielkę (nocowanie.pl ma błędnie wpisane 10 zł/doba — do poprawy, patrz §10)
 
-**W apartamentach:** TV z płaskim ekranem, sofa, część jadalna i wypoczynkowa, biurko, żelazko i deska, suszarka do ubrań, wentylator, gniazdko przy łóżku, pościel, szafa/garderoba, ogrzewanie, zestaw do kawy i herbaty
+**W apartamentach:** Wi-Fi, TV z płaskim ekranem, sofa, część jadalna i wypoczynkowa, biurko, żelazko i deska, suszarka do ubrań, wentylator, gniazdko przy łóżku, pościel, szafa/garderoba, ogrzewanie, zestaw do kawy i herbaty
 
 **Łazienka:** wanna lub prysznic, suszarka do włosów, prywatna łazienka
 
@@ -114,14 +119,17 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 
 **Aktywności:** trekking, nordic walking, rowery (trasy w okolicy), zimą narty w regionie ⚠️ (doprecyzować najbliższe wyciągi)
 
-**Uwaga:** słaby/brak zasięgu komórkowego (z opinii) — można komunikować jako „cyfrowy detoks, ale z internetem”, jeśli Wi-Fi potwierdzone
+**Uwaga:** słaby/brak zasięgu komórkowego (z opinii), ale w domu jest Wi-Fi (potwierdzone) —
+można komunikować jako „cyfrowy detoks, ale z internetem”
 
 ## 6. Opinie
 
-**Booking:** 8,3 „Bardzo dobry” (3 opinie)
+**Booking:** 8,3 „Bardzo dobry” (3 opinie) — https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html
 - Personel 10 · Udogodnienia 10 · Czystość 10 · Lokalizacja 10 · Stosunek jakości do ceny 9,2 · Komfort 8,3
 
 **nocowanie.pl:** 9,3 „Rewelacyjny” (15 opinii)
+
+**Google:** 5,0 (3 opinie) — https://www.google.com/maps?cid=9828009508709434931
 
 **Powtarzające się motywy w opiniach:**
 - szum potoku, cisza, śpiew ptaków, „z dala od cywilizacji”
@@ -132,7 +140,15 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 - przyjazny psom (goście przyjeżdżają z psami)
 - goście z Czech — potencjał na wersję CZ/SK w przyszłości
 
-⚠️ Do strony: zebrać od właścicielki zgodę / wybrać 3–4 pełne opinie do sekcji referencji (z imieniem i źródłem).
+**Pełne cytaty do sekcji referencji** — zgoda właścicielki potwierdzona, imię + inicjał, źródło Google:
+
+1. Justyna B.: „Bardzo przytulny domek w górach, dobrze wyposażony i zadbany, dzięki czemu pobyt był
+   naprawdę komfortowy.”
+2. Ela P.: „Obiekt nad samym potokiem nieopodal głównej drogi przy rostaju szlaków żółtego i zielonego
+   w otoczeniu drzew. Bardzo sympatyczni gospodarze super kontakt. Na wyposażeniu wszystko co niezbędne.
+   Byliśmy zachwyceni miejscem i otoczeniem. Polecamy wszystkim miłośnikom przyrody i spokoju oraz
+   lubiącym wycieczki po górach. Obiekt bardzo przyjazny czworonogom.”
+3. Wojtek C.: „Bardzo przyjemny pobyt. Lokalizacja idealna i kontakt z właścicielką na wysokim poziomie.”
 
 ## 7. Media
 
@@ -149,10 +165,22 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 ## 9. Frazy kluczowe (robocze)
 
 - nocleg Rycerka Górna / domek Rycerka Górna
-- dom do wynajęcia 14 osób Beskid Żywiecki / dom dla dużej grupy Beskidy
+- dom do wynajęcia 12 osób Beskid Żywiecki / dom dla dużej grupy Beskidy
 - apartament Rycerka Górna
 - nocleg z psem Beskid Żywiecki / domek z psem ogrodzony teren
 - nocleg Wielka Racza / nocleg pod Wielką Raczą
 - dom nad potokiem Beskidy / domek nad rzeką w górach
 - domek z basenem Beskid Żywiecki
 - noclegi Rajcza
+
+## 10. Do poprawy w ogłoszeniach (dla właścicielki)
+
+Rozbieżności znalezione podczas budowy strony, zgłoszone i potwierdzone przez właścicielkę —
+do poprawy bezpośrednio w panelach ogłoszeń (nie wpływają już na treść tej strony):
+
+- **Booking:** zaznaczyć internet (Wi-Fi) w udogodnieniach — obecnie panel pokazuje
+  „Połączenie z Internetem nie jest dostępne”, mimo że Wi-Fi jest.
+- **nocowanie.pl:** usunąć opłatę 10 zł/doba za psa — pobyt z psem jest bez dodatkowych opłat.
+- **Wszędzie (Booking, nocowanie.pl, e-turysta, infoturystyka, otonoclegi, spaniewpolsce):**
+  ujednolicić na 12 miejsc noclegowych i adres zgodny z wizytówką Google —
+  „Rycerka Górna 359D, 34-370 Rycerka Górna”.
