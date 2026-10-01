@@ -22,7 +22,7 @@
 		description: meta.description,
 		telephone: nap.phone,
 		...(canonical ? { url: canonical } : {}),
-		sameAs: [onlinePresence.bookingUrl, nap.mapsUrl],
+		sameAs: [onlinePresence.bookingUrl, onlinePresence.airbnbUrl, nap.mapsUrl],
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: nap.street,

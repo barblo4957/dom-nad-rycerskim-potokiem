@@ -21,6 +21,10 @@
 				<a href={onlinePresence.bookingUrl} target="_blank" rel="noopener" class="text-on-forest underline">
 					Booking.com
 				</a>
+				·
+				<a href={onlinePresence.airbnbUrl} target="_blank" rel="noopener" class="text-on-forest underline">
+					Airbnb
+				</a>
 			</p>
 		</div>
 		<address class="grid gap-1 rounded-(--radius-token) border border-on-forest/20 p-6 not-italic">

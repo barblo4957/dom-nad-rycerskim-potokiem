@@ -178,7 +178,8 @@ można komunikować jako „cyfrowy detoks, ale z internetem”
 ## 8. Obecność w sieci (do aktualizacji po starcie strony)
 
 - Booking.com: https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html
-- Airbnb ⚠️ (link), nocowanie.pl, e-turysta.com, infoturystyka.pl, otonoclegi.pl, spaniewpolsce.pl
+- Airbnb (mały apartament): https://www.airbnb.pl/rooms/1629813339298616154
+- nocowanie.pl, e-turysta.com, infoturystyka.pl, otonoclegi.pl, spaniewpolsce.pl
 - Wszędzie: dodać link do strony, ujednolicić NAP, liczbę miejsc, ceny i udogodnienia
 
 ## 9. Frazy kluczowe (robocze)

@@ -434,14 +434,16 @@ export const media = {
 export const onlinePresence = {
 	platforms: [
 		'Booking.com',
+		'Airbnb',
 		'nocowanie.pl',
 		'e-turysta.com',
 		'infoturystyka.pl',
 		'otonoclegi.pl',
 		'spaniewpolsce.pl'
 	],
-	airbnbUrl: unconfirmed<string | null>(null, 'Link do ogłoszenia na Airbnb — uzupełnić.'),
-	bookingUrl: 'https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html'
+	bookingUrl: 'https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html',
+	// Ogłoszenie małego apartamentu na Airbnb — potwierdzone.
+	airbnbUrl: 'https://www.airbnb.pl/rooms/1629813339298616154'
 };
 
 // --- Frazy kluczowe SEO (docs/context.md §9) --------------------------------
