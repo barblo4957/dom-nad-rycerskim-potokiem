@@ -24,7 +24,8 @@ export const nap = {
 	language: 'polski',
 	geo: unconfirmed(
 		{ lat: 49.431309, lng: 19.0122694 },
-		'Współrzędne z otonoclegi.pl — zweryfikować pinezkę w Google Maps przed publikacją.'
+		'Współrzędne z otonoclegi.pl — zweryfikować pinezkę w Google Maps przed publikacją.',
+		{ lat: 49.431309, lng: 19.0122694 }
 	),
 	get mapsUrl() {
 		return `https://www.google.com/maps?q=${nap.geo.value.lat},${nap.geo.value.lng}`;
@@ -92,7 +93,14 @@ export const apartments: Apartment[] = [
 				'sypialnia 4: łóżko podwójne + sofa rozkładana',
 				'dodatkowo: sofa rozkładana'
 			],
-			'Booking pokazuje 5 pozycji przy 4 sypialniach — potwierdzić przypisanie łóżek do pokoi.'
+			'Booking pokazuje 5 pozycji przy 4 sypialniach — potwierdzić przypisanie łóżek do pokoi.',
+			[
+				'sypialnia 1: łóżko podwójne + sofa rozkładana',
+				'sypialnia 2: 2 sofy rozkładane',
+				'sypialnia 3: łóżko podwójne',
+				'sypialnia 4: łóżko podwójne + sofa rozkładana',
+				'dodatkowo: sofa rozkładana'
+			]
 		),
 		features: ['kuchnia z piekarnikiem i zmywarką', 'łazienka + osobne WC', 'salon z TV', 'balkon']
 	},
@@ -101,13 +109,15 @@ export const apartments: Apartment[] = [
 		name: 'Apartament mały',
 		capacity: unconfirmed(
 			'2–4 osoby',
-			'Rozbieżność: nocowanie.pl — 2–4 os., 2 łóżka podwójne; Booking — „Apartament typu Standard z 1 sypialnią", 2 sofy rozkładane, 2 osoby. Ustalić z właścicielką faktyczny stan i poprawić ogłoszenia.'
+			'Rozbieżność: nocowanie.pl — 2–4 os., 2 łóżka podwójne; Booking — „Apartament typu Standard z 1 sypialnią", 2 sofy rozkładane, 2 osoby. Ustalić z właścicielką faktyczny stan i poprawić ogłoszenia.',
+			'2 osoby'
 		),
 		priceFrom: 360,
 		priceUnit: 'noc',
 		beds: unconfirmed(
 			['dwa łóżka podwójne'],
-			'Patrz rozbieżność w `capacity` — Booking podaje 2 sofy rozkładane zamiast łóżek podwójnych.'
+			'Patrz rozbieżność w `capacity` — Booking podaje 2 sofy rozkładane zamiast łóżek podwójnych.',
+			['Szczegóły telefonicznie.']
 		),
 		features: ['aneks kuchenny', 'łazienka z WC', 'TV']
 	}
@@ -168,6 +178,7 @@ export const dog = {
 	title: 'Nocleg z psem w Beskidzie Żywieckim',
 	description:
 		'Teren jest ogrodzony, więc pies może swobodnie biegać po ogrodzie. Na miejscu czekają miski i legowisko. Szlaki zaczynają się kilka kroków od domu.',
+	// Brak publicValue: sporna stawka (10 zł vs „bez opłat") nie trafia na produkcję.
 	fee: unconfirmed<null>(
 		null,
 		'Rozbieżność: nocowanie.pl — 10 zł/doba; Booking — „bez dodatkowych opłat". Ujednolicić przed publikacją.'
