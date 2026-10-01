@@ -1,11 +1,6 @@
 <script lang="ts">
-	import { bookingRules, faq } from '$lib/data/site';
-	import { resolvePending } from '$lib/data/pending';
+	import { bookingRules, visibleFaq } from '$lib/data/site';
 	import Pending from '$lib/components/Pending.svelte';
-
-	const visibleFaq = faq
-		.map((item) => ({ ...item, resolvedAnswer: resolvePending(item.answer) }))
-		.filter((item) => item.resolvedAnswer);
 </script>
 
 <section id="zasady" class="py-12 md:py-20">
@@ -43,7 +38,7 @@
 					>
 						{item.question}
 					</summary>
-					<p class="mt-[0.6rem] max-w-[60ch] text-muted">{item.resolvedAnswer}</p>
+					<p class="mt-[0.6rem] max-w-[60ch] text-muted">{item.answer}</p>
 				</details>
 			{/each}
 		</div>

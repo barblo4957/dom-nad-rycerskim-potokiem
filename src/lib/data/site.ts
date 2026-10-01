@@ -3,9 +3,15 @@
 // jako ⚠️ są tu opakowane w PendingField i mają opis rozbieżności w `pending`.
 // Renderowanie tych pól: zobacz resolvePending() w ./pending.ts.
 
-import { confirmed, unconfirmed, type PendingField } from './pending';
+import { confirmed, unconfirmed, resolvePending, type PendingField } from './pending';
 
 export type { PendingField };
+
+// Publiczny URL strony — ustawiany przez PUBLIC_SITE_URL (patrz .env.example).
+// Domena nie jest jeszcze potwierdzona, więc nie wpisujemy jej na sztywno:
+// Seo.svelte i sitemap.xml pomijają pola wymagające absolutnego URL-a, dopóki
+// zmienna nie jest ustawiona.
+export { siteUrl } from './pending';
 
 // --- NAP (docs/context.md §1) ---------------------------------------------
 
@@ -205,6 +211,11 @@ export interface FaqItem {
 	answer: PendingField<string>;
 }
 
+export interface ResolvedFaqItem {
+	question: string;
+	answer: string;
+}
+
 export const faq: FaqItem[] = [
 	{
 		question: 'Czy można przyjechać z psem?',
@@ -235,6 +246,13 @@ export const faq: FaqItem[] = [
 		)
 	}
 ];
+
+// FAQ przefiltrowane do pozycji z potwierdzoną/publiczną odpowiedzią —
+// współdzielone przez Booking.svelte (render) i Seo.svelte (FAQPage JSON-LD),
+// żeby obie listy były zawsze zgodne.
+export const visibleFaq: ResolvedFaqItem[] = faq
+	.map((item) => ({ question: item.question, answer: resolvePending(item.answer) }))
+	.filter((item): item is ResolvedFaqItem => Boolean(item.answer));
 
 // --- Okolica (docs/context.md §5) -------------------------------------------
 
@@ -404,6 +422,14 @@ export const seoPhrases = [
 	'domek z basenem Beskid Żywiecki',
 	'noclegi Rajcza'
 ];
+
+// --- Meta / SEO (docs/context.md §9, koncept/index.html) -------------------
+
+export const meta = {
+	title: 'Dom nad Rycerskim Potokiem — nocleg Rycerka Górna, Beskid Żywiecki',
+	description:
+		'Całoroczny dom dla 14 osób w Rycerce Górnej, Beskid Żywiecki. Dwa apartamenty nad potokiem, basen latem, psy mile widziane. Rezerwacja bezpośrednio u gospodyni.'
+};
 
 // --- Kontakt (koncept/index.html) -------------------------------------------
 

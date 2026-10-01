@@ -23,6 +23,12 @@ export function unconfirmed<T>(value: T, pending: string, publicValue?: T): Pend
 
 export const showNotes = env.PUBLIC_SHOW_NOTES === 'true';
 
+// Domena produkcyjna jeszcze nie ustalona (brak w docs/context.md).
+// Ustawić PUBLIC_SITE_URL w Vercel przed wdrożeniem — bez niej Seo.svelte
+// i sitemap.xml pomijają pola wymagające bezwzględnego URL-a (canonical,
+// og:url, JSON-LD @id, <loc> w sitemapie).
+export const siteUrl = (env.PUBLIC_SITE_URL ?? '').replace(/\/$/, '');
+
 /**
  * Rozwiązuje pole do renderowania.
  *

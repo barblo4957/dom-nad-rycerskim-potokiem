@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	import SiteFooter from '$lib/components/SiteFooter.svelte';
 	import Hero from '$lib/components/sections/Hero.svelte';
@@ -11,6 +12,8 @@
 	import Booking from '$lib/components/sections/Booking.svelte';
 	import Contact from '$lib/components/sections/Contact.svelte';
 </script>
+
+<Seo />
 
 <SiteHeader />
 
