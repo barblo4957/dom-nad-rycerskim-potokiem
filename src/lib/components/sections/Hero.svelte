@@ -34,10 +34,15 @@
 		</ul>
 	</div>
 
-	<div
-		class="relative aspect-4/5 overflow-hidden rounded-(--radius-token) bg-linear-to-br from-forest via-water/40 to-forest md:aspect-4/3"
-		aria-label="Miejsce na wideo z widokiem na dom i dolinę"
-	>
+	<div class="relative aspect-4/5 overflow-hidden rounded-(--radius-token) bg-forest md:aspect-4/3">
+		<enhanced:img
+			src="../../assets/photos/hero-dom-ogrod.webp"
+			alt="Dom nad Rycerskim Potokiem w Rycerce Górnej — widok od strony ogrodu"
+			sizes="(min-width: 768px) 520px, calc(100vw - 2rem)"
+			fetchpriority="high"
+			loading="eager"
+			class="absolute inset-0 h-full w-full object-cover"
+		/>
 		<div class="absolute inset-x-3 bottom-3 flex flex-wrap justify-between gap-2 font-mono text-[0.74rem] text-on-forest">
 			{#if geo}
 				<span class="rounded-[3px] bg-forest/70 px-2 py-1">{geo.lat.toFixed(4)}° N, {geo.lng.toFixed(4)}° E</span>
