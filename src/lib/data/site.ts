@@ -1,19 +1,11 @@
 // Jedyne źródło treści strony. Wszystkie fakty pochodzą z docs/context.md,
 // copy sekcji opisowych — z koncept/index.html. Pola oznaczone w context.md
 // jako ⚠️ są tu opakowane w PendingField i mają opis rozbieżności w `pending`.
+// Renderowanie tych pól: zobacz resolvePending() w ./pending.ts.
 
-export interface PendingField<T> {
-	value: T;
-	pending?: string;
-}
+import { confirmed, unconfirmed, type PendingField } from './pending';
 
-function confirmed<T>(value: T): PendingField<T> {
-	return { value };
-}
-
-function unconfirmed<T>(value: T, pending: string): PendingField<T> {
-	return { value, pending };
-}
+export type { PendingField };
 
 // --- NAP (docs/context.md §1) ---------------------------------------------
 
