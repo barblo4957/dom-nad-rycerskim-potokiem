@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { nap, meta, reviews, visibleFaq, siteUrl, onlinePresence } from '$lib/data/site';
-	import { resolvePending } from '$lib/data/pending';
+	import { resolvePending, showNotes } from '$lib/data/pending';
 
 	const geo = resolvePending(nap.geo);
 	const canonical = siteUrl ? `${siteUrl}/` : undefined;
@@ -79,6 +79,9 @@
 <svelte:head>
 	<title>{meta.title}</title>
 	<meta name="description" content={meta.description} />
+	{#if showNotes}
+		<meta name="robots" content="noindex, nofollow" />
+	{/if}
 	{#if canonical}
 		<link rel="canonical" href={canonical} />
 	{/if}
