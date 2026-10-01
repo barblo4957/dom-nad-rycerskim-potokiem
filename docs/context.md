@@ -33,8 +33,9 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 - Łazienka + osobna toaleta, hol/salon z TV
 - Balkon
 
-### Apartament mały (Booking: „Apartament typu Standard z 1 sypialnią”)
-- 26 m², 1 sypialnia, 2 sofy rozkładane (potwierdzone przez właściciela ogłoszenia na Booking)
+### Apartament mały
+- 26 m², otwarta przestrzeń z wnęką sypialną (2 sofy rozkładane), częścią dzienną i aneksem
+  kuchennym — nie osobna sypialnia (potwierdzone przez właściciela ogłoszenia na Booking)
 - Kuchnia: płyta kuchenna, piekarnik, lodówka, mikrofala, czajnik, toster, zestaw do kawy i herbaty,
   przybory kuchenne, stół / część jadalniana
 - Prywatna łazienka: wanna lub prysznic, suszarka do włosów

@@ -83,6 +83,7 @@ export interface Apartment {
 	id: string;
 	name: string;
 	areaM2?: number;
+	layoutNote?: string;
 	capacity: PendingField<string>;
 	priceFrom: number;
 	priceUnit: string;
@@ -127,9 +128,12 @@ export const apartments: Apartment[] = [
 		id: 'small',
 		name: 'Apartament mały',
 		areaM2: 26,
+		// To nie osobna sypialnia — otwarta przestrzeń z wnęką sypialną, częścią
+		// dzienną i aneksem kuchennym. Potwierdzone przez właścicielkę.
+		layoutNote: 'Otwarta przestrzeń z wnęką sypialną, częścią dzienną i aneksem kuchennym.',
 		// Pojemność pozostaje pending: Booking podaje 2 osoby, nocowanie.pl 2–4.
-		// Łóżka (2 sofy rozkładane) są już potwierdzone przez właściciela ogłoszenia
-		// na Booking, niezależnie od sporu o pojemność.
+		// Układ (wnęka sypialna, 2 sofy rozkładane) jest już potwierdzony przez
+		// właścicielkę, niezależnie od sporu o pojemność.
 		capacity: unconfirmed(
 			'2–4 osoby',
 			'Booking podaje 2 osoby, nocowanie.pl 2–4 osoby. Ustalić z właścicielką faktyczną pojemność i ujednolicić ogłoszenia.',
@@ -137,7 +141,7 @@ export const apartments: Apartment[] = [
 		),
 		priceFrom: 360,
 		priceUnit: 'noc',
-		beds: confirmed(['sypialnia: 2 sofy rozkładane']),
+		beds: confirmed(['wnęka sypialna: 2 sofy rozkładane']),
 		groups: [
 			{
 				title: 'Kuchnia',

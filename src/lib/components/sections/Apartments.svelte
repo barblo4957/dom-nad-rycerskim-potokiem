@@ -29,6 +29,10 @@
 						</p>
 					</div>
 
+					{#if apartment.layoutNote}
+						<p class="text-[0.95rem] text-muted">{apartment.layoutNote}</p>
+					{/if}
+
 					<ul class="m-0 grid list-none gap-[0.35rem] p-0" aria-label="Układ łóżek">
 						<Pending field={apartment.beds}>
 							{#snippet children(beds)}
