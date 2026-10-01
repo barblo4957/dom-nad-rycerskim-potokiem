@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+@import '@fontsource/young-serif';
+@import '@fontsource-variable/hanken-grotesk';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+/* Tokeny z koncept/index.html — light (default) */
+:root {
+	--color-bg: #eef1ec;
+	--color-surface: #f7f9f5;
+	--color-fg: #18241d;
+	--color-muted: #56645a;
+	--color-line: #ccd5cb;
+	--color-forest: #1f3b2d;
+	--color-moss: #4f6b47;
+	--color-water: #5e8790;
+	--color-wood: #a8642b;
+	--color-wood-ink: #8a4f1e;
+	--color-on-forest: #eef1ec;
+	--color-note-bg: #fff4d6;
+	--color-note-fg: #6b4a00;
+	--color-note-line: #e8cf8a;
+
+	--font-display: 'Young Serif', Georgia, 'Times New Roman', serif;
+	--font-body: 'Hanken Grotesk Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+	--text-step--1: 0.875rem;
+	--text-step-0: 1.0625rem;
+	--text-step-1: 1.3rem;
+	--text-step-2: 1.7rem;
+	--text-step-3: 2.3rem;
+	--text-step-4: clamp(2.4rem, 5.4vw, 4.1rem);
+
+	--radius-token: 6px;
+}
+
+/* Tokeny — dark (system preference) */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--color-bg: #111915;
+		--color-surface: #17211b;
+		--color-fg: #e3e9e2;
+		--color-muted: #9aa99d;
+		--color-line: #2c3a31;
+		--color-forest: #0c1410;
+		--color-moss: #8fae84;
+		--color-water: #83aeb7;
+		--color-wood: #d9934f;
+		--color-wood-ink: #e7a665;
+		--color-on-forest: #e3e9e2;
+		--color-note-bg: #2e2610;
+		--color-note-fg: #f0d58c;
+		--color-note-line: #5a4818;
+		color-scheme: dark;
+	}
+}
+
+/* Tokeny — dark (wymuszony, np. przełącznik na stronie) */
+:root[data-theme='dark'] {
+	--color-bg: #111915;
+	--color-surface: #17211b;
+	--color-fg: #e3e9e2;
+	--color-muted: #9aa99d;
+	--color-line: #2c3a31;
+	--color-forest: #0c1410;
+	--color-moss: #8fae84;
+	--color-water: #83aeb7;
+	--color-wood: #d9934f;
+	--color-wood-ink: #e7a665;
+	--color-on-forest: #e3e9e2;
+	--color-note-bg: #2e2610;
+	--color-note-fg: #f0d58c;
+	--color-note-line: #5a4818;
+	color-scheme: dark;
+}
+
+/* Rejestracja tokenów jako Tailwind theme (utilities: bg-bg, text-fg, font-display, text-step-1 ...) */
+@theme inline {
+	--color-bg: var(--color-bg);
+	--color-surface: var(--color-surface);
+	--color-fg: var(--color-fg);
+	--color-muted: var(--color-muted);
+	--color-line: var(--color-line);
+	--color-forest: var(--color-forest);
+	--color-moss: var(--color-moss);
+	--color-water: var(--color-water);
+	--color-wood: var(--color-wood);
+	--color-wood-ink: var(--color-wood-ink);
+	--color-on-forest: var(--color-on-forest);
+	--color-note-bg: var(--color-note-bg);
+	--color-note-fg: var(--color-note-fg);
+	--color-note-line: var(--color-note-line);
+
+	--font-display: var(--font-display);
+	--font-body: var(--font-body);
+	--font-mono: var(--font-mono);
+
+	--text-step--1: var(--text-step--1);
+	--text-step-0: var(--text-step-0);
+	--text-step-1: var(--text-step-1);
+	--text-step-2: var(--text-step-2);
+	--text-step-3: var(--text-step-3);
+	--text-step-4: var(--text-step-4);
+
+	--radius-token: var(--radius-token);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	background: var(--color-bg);
+	color: var(--color-fg);
+	font-family: var(--font-body);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-wood);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
