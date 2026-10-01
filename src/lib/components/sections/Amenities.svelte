@@ -8,7 +8,8 @@
 		{ title: 'W apartamentach', items: amenities.inApartments },
 		{ title: 'Łazienki', items: amenities.bathroom },
 		{ title: 'Przyjazd', items: amenities.arrival },
-		{ title: 'Rodziny i rozrywka', items: amenities.family }
+		{ title: 'Rodziny i rozrywka', items: amenities.family },
+		{ title: 'Bezpieczeństwo', items: amenities.safety }
 	];
 </script>
 
@@ -40,6 +41,11 @@
 					<li>
 						<Pending field={amenities.meals}>
 							{#snippet children(meals)}{meals}{/snippet}
+						</Pending>
+					</li>
+					<li>
+						<Pending field={amenities.fireplace}>
+							{#snippet children(fireplace)}{fireplace}{/snippet}
 						</Pending>
 					</li>
 				</ul>

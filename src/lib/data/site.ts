@@ -57,8 +57,8 @@ export const about = {
 	eyebrow: 'Dom',
 	title: 'Szum potoku zamiast miejskiego hałasu',
 	paragraphs: [
-		'Wolnostojący dom z parterem i poddaszem stoi na ogrodzonej działce w Rycerce Górnej, w Żywieckim Parku Krajobrazowym. Z jednej strony płynie Rycerski Potok, za nim zaczyna się las, w którym latem zbiera się jagody i grzyby.',
-		'Wynajmujemy cały dom dla grupy do 12 osób albo jeden z dwóch apartamentów. W ogrodzie jest taras, altana z grillem, miejsce na ognisko, plac zabaw i mały basen, czynny w sezonie letnim.',
+		'Wolnostojący dom z parterem i poddaszem stoi na działce w Rycerce Górnej, w Żywieckim Parku Krajobrazowym — ogrodzonej z dwóch stron, z dwóch pozostałych granicę wyznacza potok. Z jednej strony płynie Rycerski Potok, za nim zaczyna się las, w którym latem zbiera się jagody i grzyby.',
+		'Wynajmujemy cały dom dla grupy do 12 osób albo jeden z dwóch apartamentów. W ogrodzie jest taras, altana z grillem, miejsce na ognisko, plac zabaw i mały basen, czynny w okresie wakacyjnym.',
 		'Zasięg komórkowy bywa tu słaby, ale w domu działa Wi-Fi.'
 	]
 };
@@ -72,96 +72,57 @@ export const offer = {
 	priceNote: 'Ceny są orientacyjne i zależą od liczby osób. Zadzwoń, a gospodyni poda dokładną kwotę na wybrany termin.'
 };
 
-export interface AmenityGroup {
-	title: string;
-	items: string[];
-}
-
+// Wspólny schemat obu kart: nagłówek (pojemność · metraż), jedno zdanie o układzie,
+// spanie (lista łóżek), max 4 kluczowe cechy jako tick-lista. Wszystko co wspólne dla
+// całego domu (taras, patio, widoki, Wi-Fi, basen, grill, meble ogrodowe, pościel,
+// żelazko itd.) NIE powtarza się tu — jest wyłącznie w sekcji Udogodnienia.
 export interface Apartment {
 	id: string;
 	name: string;
 	areaM2?: number;
-	layoutNote?: string;
-	capacity: PendingField<string>;
+	capacity: string;
 	priceFrom: number;
 	priceUnit: string;
-	beds: PendingField<string[]>;
-	groups: AmenityGroup[];
+	layout: string;
+	beds: string[];
+	features: string[];
 }
 
 export const apartments: Apartment[] = [
 	{
 		id: 'large',
 		name: 'Apartament z balkonem',
-		capacity: confirmed('do 10 osób · 4 sypialnie'),
+		capacity: 'do 10 osób · 4 sypialnie',
 		priceFrom: 900,
 		priceUnit: 'noc',
+		layout: 'Cztery sypialnie, salon z TV i kuchnia z balkonem.',
 		// Potwierdzone przez właścicielkę: to 4 sypialnie + salon (salon nie jest
 		// sypialnią, ma sofę rozkładaną) — stąd 5 pozycji przy "4 sypialniach" na Booking.
-		beds: confirmed([
+		beds: [
 			'sypialnia 1: łóżko podwójne + sofa rozkładana',
 			'sypialnia 2: 2 sofy rozkładane',
 			'sypialnia 3: łóżko podwójne',
 			'sypialnia 4: łóżko podwójne + sofa rozkładana',
 			'salon: sofa rozkładana'
-		]),
-		groups: [
-			{
-				title: 'Kuchnia',
-				items: ['kuchenka elektryczna z piekarnikiem', 'lodówka', 'zmywarka', 'mikrofala', 'czajnik', 'toster', 'naczynia']
-			},
-			{ title: 'Łazienka', items: ['łazienka + osobna toaleta'] },
-			{ title: 'Salon i balkon', items: ['Wi-Fi', 'hol/salon z TV', 'balkon'] }
-		]
+		],
+		features: ['kuchnia z piekarnikiem i zmywarką', 'łazienka + osobne WC', 'salon z TV', 'balkon']
 	},
 	{
 		id: 'small',
 		name: 'Apartament mały',
 		areaM2: 26,
-		// To nie osobna sypialnia — otwarta przestrzeń z wnęką sypialną, częścią
-		// dzienną i aneksem kuchennym. Potwierdzone przez właścicielkę, tak jak
-		// pojemność (2 osoby + możliwa dostawka dla dziecka, maks. 2 dorosłych).
-		layoutNote:
-			'Otwarta przestrzeń z wnęką sypialną, częścią dzienną i aneksem kuchennym. Maksymalnie 2 dorosłych.',
-		capacity: confirmed('2 osoby (+ dziecko)'),
+		capacity: '2 osoby (+ dziecko)',
 		priceFrom: 360,
 		priceUnit: 'noc',
-		beds: confirmed(['wnęka sypialna: 2 sofy rozkładane']),
-		groups: [
-			{
-				title: 'Kuchnia',
-				items: [
-					'płyta kuchenna',
-					'piekarnik',
-					'lodówka',
-					'mikrofala',
-					'czajnik',
-					'toster',
-					'zestaw do kawy i herbaty',
-					'przybory kuchenne',
-					'stół / część jadalniana'
-				]
-			},
-			{ title: 'Łazienka', items: ['prywatna łazienka', 'wanna lub prysznic', 'suszarka do włosów'] },
-			{
-				title: 'W apartamencie',
-				items: [
-					'Wi-Fi',
-					'TV z płaskim ekranem',
-					'biurko',
-					'żelazko',
-					'wentylator',
-					'suszarka do ubrań',
-					'gry planszowe',
-					'pościel',
-					'szafa',
-					'ogrzewanie'
-				]
-			},
-			{
-				title: 'Widok i taras',
-				items: ['balkon', 'taras', 'patio', 'widok na ogród, basen, góry i potok']
-			}
+		layout: 'Jedno przestronne pomieszczenie z częścią sypialną we wnęce i aneksem kuchennym.',
+		// Potwierdzone przez właściciela (Airbnb): dwa rozkładane tapczany + fotel dla dziecka,
+		// nie "2 sofy rozkładane" jak wcześniej.
+		beds: ['2 podwójne rozkładane tapczany', 'rozkładany fotel (dla dziecka)'],
+		features: [
+			'aneks kuchenny (lodówka, piekarnik, mikrofala, czajnik)',
+			'łazienka z prysznicem i WC',
+			'TV',
+			'szafki na ubrania'
 		]
 	}
 ];
@@ -175,8 +136,10 @@ export const wholeHouse = {
 // --- Udogodnienia (docs/context.md §3) --------------------------------------
 
 export const amenities = {
+	// Ogrodzenie: potwierdzone przez właścicielkę — posesja jest ogrodzona z dwóch stron,
+	// z dwóch pozostałych granicę wyznacza potok. Nie pisać "ogrodzony teren" bez tego doprecyzowania.
 	garden: [
-		'ogrodzona działka nad potokiem',
+		'działka ogrodzona z dwóch stron, z dwóch pozostałych granicę wyznacza potok',
 		'słoneczny taras i patio',
 		'altana, meble ogrodowe',
 		'jadalnia na świeżym powietrzu',
@@ -184,13 +147,14 @@ export const amenities = {
 		'miejsce na piknik',
 		'plac zabaw'
 	],
-	pool: ['odkryty, czynny latem (sezonowy)', 'bezpłatny dla gości w każdym wieku', 'leżaki'],
+	pool: ['odkryty, czynny w okresie wakacyjnym', 'bezpłatny dla gości w każdym wieku', 'leżaki'],
 	inApartments: [
 		'Wi-Fi',
 		'TV z płaskim ekranem',
 		'sofa, część jadalna i wypoczynkowa',
-		'biurko',
+		'biurko (miejsce do pracy)',
 		'żelazko i deska, suszarka do ubrań',
+		'pralka',
 		'wentylator',
 		'gniazdko przy łóżku',
 		'pościel, szafa/garderoba',
@@ -199,7 +163,7 @@ export const amenities = {
 	],
 	bathroom: ['wanna lub prysznic', 'suszarka do włosów', 'prywatna łazienka'],
 	family: ['plac zabaw', 'gry planszowe i puzzle', 'sprzęt do badmintona', 'pokoje rodzinne'],
-	safety: ['gaśnice', 'monitoring wokół obiektu', 'sejf na klucze — samodzielne zameldowanie'],
+	safety: ['gaśnice', 'apteczka', 'monitoring wokół obiektu', 'sejf na klucze — samodzielne zameldowanie'],
 	arrival: [
 		'bezpłatny, prywatny parking na terenie — 5 miejsc, bez rezerwacji',
 		'samodzielne zameldowanie (sejf na klucze)',
@@ -211,13 +175,20 @@ export const amenities = {
 	meals: unconfirmed(
 		'Domowe obiady z dowozem do domu, polecane przez gospodarzy.',
 		'Potwierdzić, czy usługa nadal aktualna.'
+	),
+	// Airbnb podaje "kominek" w udogodnieniach — niejasne, czy chodzi o kominek wewnątrz
+	// domu, czy o kominek-grill w ogrodzie (ten drugi już jest w `garden`). Brak publicValue:
+	// nie wiadomo, czy to osobne, potwierdzone udogodnienie, więc nie trafia na produkcję.
+	fireplace: unconfirmed<null>(
+		null,
+		'Airbnb podaje kominek — w środku czy kominek-grill w ogrodzie?'
 	)
 };
 
 export const dog = {
 	title: 'Nocleg z psem w Beskidzie Żywieckim',
 	description:
-		'Teren jest ogrodzony, więc pies może swobodnie biegać po ogrodzie. Na miejscu czekają miski i legowisko. Szlaki zaczynają się kilka kroków od domu.',
+		'Działka jest ogrodzona z dwóch stron, z dwóch pozostałych granicę wyznacza potok, więc pies może swobodnie biegać po ogrodzie. Na miejscu czekają miski i legowisko. Szlaki zaczynają się kilka kroków od domu.',
 	// Potwierdzone przez właścicielkę: bez dodatkowych opłat. nocowanie.pl ma
 	// wpisane 10 zł/doba — do usunięcia w ogłoszeniu (patrz docs/context.md §10).
 	fee: confirmed('bez dodatkowych opłat')
@@ -251,7 +222,9 @@ export interface ResolvedFaqItem {
 export const faq: FaqItem[] = [
 	{
 		question: 'Czy można przyjechać z psem?',
-		answer: confirmed('Tak. Działka jest ogrodzona, a na miejscu są miski i legowisko dla psa.')
+		answer: confirmed(
+			'Tak. Działka jest ogrodzona z dwóch stron, z dwóch pozostałych granicę wyznacza potok, a na miejscu są miski i legowisko dla psa.'
+		)
 	},
 	{
 		question: 'Jak dojechać bez samochodu?',

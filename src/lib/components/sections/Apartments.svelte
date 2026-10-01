@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { apartments, offer, wholeHouse } from '$lib/data/site';
-	import Pending from '$lib/components/Pending.svelte';
 </script>
 
 <section id="apartamenty" class="py-12 md:py-20">
@@ -13,14 +12,11 @@
 
 		<div class="grid gap-4 md:grid-cols-2">
 			{#each apartments as apartment (apartment.id)}
-				<article class="flex flex-col gap-5 rounded-(--radius-token) border border-line bg-surface p-6 md:p-8">
+				<article class="flex flex-col gap-4 rounded-(--radius-token) border border-line bg-surface p-6 md:p-8">
 					<div class="flex flex-wrap items-baseline justify-between gap-4">
 						<div>
 							<p class="font-mono text-[0.8rem] tracking-[0.04em] text-moss uppercase">
-								<Pending field={apartment.capacity}>
-									{#snippet children(capacity)}{capacity}{#if apartment.areaM2} · {apartment.areaM2} m²{/if}{/snippet}
-									{#snippet empty()}zapytaj telefonicznie{#if apartment.areaM2} · {apartment.areaM2} m²{/if}{/snippet}
-								</Pending>
+								{apartment.capacity}{#if apartment.areaM2} · {apartment.areaM2} m²{/if}
 							</p>
 							<h3 class="mt-1 font-display text-step-1 text-fg">{apartment.name}</h3>
 						</div>
@@ -29,39 +25,23 @@
 						</p>
 					</div>
 
-					{#if apartment.layoutNote}
-						<p class="text-[0.95rem] text-muted">{apartment.layoutNote}</p>
-					{/if}
+					<p class="text-[0.95rem] text-muted">{apartment.layout}</p>
 
-					<ul class="m-0 grid list-none gap-[0.35rem] p-0" aria-label="Układ łóżek">
-						<Pending field={apartment.beds}>
-							{#snippet children(beds)}
-								{#each beds as bed (bed)}
-									<li class="border-b border-dotted border-line pb-[0.35rem] text-[0.95rem] text-fg">{bed}</li>
-								{/each}
-							{/snippet}
-							{#snippet empty()}
-								<li class="text-[0.95rem] text-muted">Szczegóły telefonicznie.</li>
-							{/snippet}
-						</Pending>
+					<ul class="m-0 grid list-none gap-[0.35rem] p-0" aria-label="Spanie">
+						{#each apartment.beds as bed (bed)}
+							<li class="border-b border-dotted border-line pb-[0.35rem] text-[0.95rem] text-fg">{bed}</li>
+						{/each}
 					</ul>
 
-					<div class="grid gap-4 sm:grid-cols-2">
-						{#each apartment.groups as group (group.title)}
-							<div>
-								<p class="font-mono text-[0.78rem] tracking-[0.04em] text-muted uppercase">{group.title}</p>
-								<ul class="m-0 mt-[0.4rem] grid list-none gap-[0.3rem] p-0 text-[0.92rem] text-muted">
-									{#each group.items as item (item)}
-										<li
-											class="before:mr-[0.45rem] before:inline-block before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-moss before:content-['']"
-										>
-											{item}
-										</li>
-									{/each}
-								</ul>
-							</div>
+					<ul class="m-0 grid list-none gap-[0.3rem] p-0 text-[0.92rem] text-muted">
+						{#each apartment.features as feature (feature)}
+							<li
+								class="before:mr-[0.45rem] before:inline-block before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-moss before:content-['']"
+							>
+								{feature}
+							</li>
 						{/each}
-					</div>
+					</ul>
 				</article>
 			{/each}
 

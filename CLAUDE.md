@@ -70,8 +70,9 @@ src/lib/assets/photos/         # zdjęcia przez enhanced:img
 - `<Note>` renderuje się tylko gdy `PUBLIC_SHOW_NOTES === 'true'` (preview deploy dla właścicielki).
   Na produkcji: pole pending bez potwierdzonej wartości NIE jest wyświetlane.
 - Aktualna lista pending: godziny check-in/out, obiady z dowozem, wyciągi narciarskie,
-  odległości i kolor szlaku na Przegibek/Rycerzową, link Airbnb, zdjęcia tymczasowe z portali —
-  podmienić na oryginały od właścicielki.
+  odległości i kolor szlaku na Przegibek/Rycerzową, link Airbnb, kominek (wewnątrz czy
+  kominek-grill w ogrodzie — Airbnb), zdjęcia tymczasowe z portali — podmienić na oryginały
+  od właścicielki.
 
 ## Jakość (Definition of Done)
 

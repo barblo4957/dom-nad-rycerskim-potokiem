@@ -1,6 +1,6 @@
 # Dom nad Rycerskim Potokiem — dane obiektu (Context projektu)
 
-Źródła: Booking.com (screeny, 01.10.2026), nocowanie.pl, e-turysta, infoturystyka, otonoclegi.
+Źródła: Booking.com (screeny, 01.10.2026), nocowanie.pl, e-turysta, infoturystyka, otonoclegi, Airbnb.
 Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone ⚠️ wymagają potwierdzenia u właścicielki przed publikacją.
 
 ---
@@ -37,16 +37,26 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 - Kuchnia w pełni wyposażona: kuchenka elektryczna z piekarnikiem, lodówka, zmywarka, mikrofala, czajnik, toster, naczynia
 - Łazienka + osobna toaleta, hol/salon z TV, Wi-Fi
 - Balkon
+- Karta na stronie (schemat wspólny dla obu apartamentów — patrz niżej przy małym):
+  „Cztery sypialnie, salon z TV i kuchnia z balkonem.” / cechy: kuchnia z piekarnikiem i zmywarką ·
+  łazienka + osobne WC · salon z TV · balkon
 
 ### Apartament mały
-- 26 m², otwarta przestrzeń z wnęką sypialną (2 sofy rozkładane), częścią dzienną i aneksem
-  kuchennym — nie osobna sypialnia (potwierdzone przez właścicielkę)
+- 26 m², otwarta przestrzeń z wnęką sypialną, częścią dzienną i aneksem kuchennym — nie osobna
+  sypialnia (potwierdzone przez właścicielkę)
 - Pojemność: 2 osoby (+ dziecko), maksymalnie 2 dorosłych — potwierdzone przez właścicielkę
+- Spanie (Airbnb, potwierdzone — zastępuje wcześniejsze „2 sofy rozkładane”): 2 podwójne
+  rozkładane tapczany, rozkładany fotel (dla dziecka)
 - Kuchnia: płyta kuchenna, piekarnik, lodówka, mikrofala, czajnik, toster, zestaw do kawy i herbaty,
   przybory kuchenne, stół / część jadalniana
 - Prywatna łazienka: wanna lub prysznic, suszarka do włosów
 - Balkon, taras, patio; widok na ogród, basen, góry i potok
 - Wi-Fi, TV z płaskim ekranem, biurko, żelazko, wentylator, suszarka do ubrań, gry planszowe, pościel, szafa, ogrzewanie
+- Karta na stronie (schemat wspólny dla obu apartamentów — bez grupowania w podsekcje, max 4 cechy;
+  wszystko wspólne dla domu typu taras/widoki/Wi-Fi/basen zostaje tylko w sekcji Udogodnienia):
+  „Jedno przestronne pomieszczenie z częścią sypialną we wnęce i aneksem kuchennym.” / cechy:
+  aneks kuchenny (lodówka, piekarnik, mikrofala, czajnik) · łazienka z prysznicem i WC · TV ·
+  szafki na ubrania
 
 ### Ceny (nocowanie.pl)
 - Apartament 4-os.: od 360 zł/noc
@@ -56,31 +66,40 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 
 ## 3. Udogodnienia
 
-**Teren:** ogrodzona działka, ogród, taras (słoneczny), patio, altana, meble ogrodowe, jadalnia na świeżym powietrzu, grill / kominek-grill, miejsce na ognisko, miejsce na piknik, plac zabaw
+**Teren:** działka ogrodzona z dwóch stron, z dwóch pozostałych granicę wyznacza potok (potwierdzone
+przez właścicielkę — nie pisać „ogrodzony teren” bez tego doprecyzowania), ogród, taras (słoneczny),
+patio, altana, meble ogrodowe, jadalnia na świeżym powietrzu, grill / kominek-grill, miejsce na
+ognisko, miejsce na piknik, plac zabaw
 
-**Basen:** odkryty, sezonowy (lato), mały, bezpłatny, dla osób w każdym wieku, leżaki
+**Basen:** odkryty, czynny w okresie wakacyjnym, mały, bezpłatny, dla osób w każdym wieku, leżaki
 
 **Parking:** bezpłatny, prywatny, na terenie, 5 miejsc, bez rezerwacji
 
 **Internet:** Wi-Fi w domu — potwierdzone przez właścicielkę (Booking ma błędnie zaznaczone
 „Połączenie z Internetem nie jest dostępne” w udogodnieniach — do poprawy, patrz §10)
 
-**Zwierzęta:** psy mile widziane, teren ogrodzony, miski i legowisko dla pupila, bez dodatkowych
-opłat — potwierdzone przez właścicielkę (nocowanie.pl ma błędnie wpisane 10 zł/doba — do poprawy, patrz §10)
+**Zwierzęta:** psy mile widziane, działka ogrodzona z dwóch stron (z dwóch pozostałych granicę
+wyznacza potok), miski i legowisko dla pupila, bez dodatkowych opłat — potwierdzone przez
+właścicielkę (nocowanie.pl ma błędnie wpisane 10 zł/doba — do poprawy, patrz §10)
 
-**W apartamentach:** Wi-Fi, TV z płaskim ekranem, sofa, część jadalna i wypoczynkowa, biurko, żelazko i deska, suszarka do ubrań, wentylator, gniazdko przy łóżku, pościel, szafa/garderoba, ogrzewanie, zestaw do kawy i herbaty
+**W apartamentach:** Wi-Fi, TV z płaskim ekranem, sofa, część jadalna i wypoczynkowa, biurko
+(miejsce do pracy), żelazko i deska, suszarka do ubrań, pralka, wentylator, gniazdko przy łóżku,
+pościel, szafa/garderoba, ogrzewanie, zestaw do kawy i herbaty
 
 **Łazienka:** wanna lub prysznic, suszarka do włosów, prywatna łazienka
 
 **Rodziny / rozrywka:** plac zabaw, gry planszowe/puzzle, sprzęt do badmintona, pokoje rodzinne
 
-**Bezpieczeństwo:** gaśnice, monitoring wokół obiektu, dostęp za pomocą kluczy (sejf na klucze — samodzielne zameldowanie)
+**Bezpieczeństwo:** gaśnice, apteczka, monitoring wokół obiektu, dostęp za pomocą kluczy (sejf na klucze — samodzielne zameldowanie)
 
 **Inne:** całkowity zakaz palenia w środku (wyznaczone miejsca na zewnątrz), możliwość wystawienia faktury, indywidualne zameldowanie/wymeldowanie
 
 **Widoki:** na potok, góry, ogród, basen
 
 **Dodatkowo:** domowe obiady z dowozem do domu (polecane przez gospodarzy) ⚠️ potwierdzić, czy aktualne
+
+**Kominek:** ⚠️ Airbnb podaje „kominek” w udogodnieniach — niejasne, czy chodzi o kominek wewnątrz
+domu, czy o kominek-grill w ogrodzie (już ujęty w „Teren” wyżej). Ustalić z właścicielką.
 
 ## 4. Zasady rezerwacji (nocowanie.pl)
 
