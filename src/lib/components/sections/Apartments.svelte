@@ -13,13 +13,13 @@
 
 		<div class="grid gap-4 md:grid-cols-2">
 			{#each apartments as apartment (apartment.id)}
-				<article class="flex flex-col gap-4 rounded-(--radius-token) border border-line bg-surface p-6 md:p-8">
+				<article class="flex flex-col gap-5 rounded-(--radius-token) border border-line bg-surface p-6 md:p-8">
 					<div class="flex flex-wrap items-baseline justify-between gap-4">
 						<div>
 							<p class="font-mono text-[0.8rem] tracking-[0.04em] text-moss uppercase">
 								<Pending field={apartment.capacity}>
-									{#snippet children(capacity)}{capacity}{/snippet}
-									{#snippet empty()}zapytaj telefonicznie{/snippet}
+									{#snippet children(capacity)}{capacity}{#if apartment.areaM2} · {apartment.areaM2} m²{/if}{/snippet}
+									{#snippet empty()}zapytaj telefonicznie{#if apartment.areaM2} · {apartment.areaM2} m²{/if}{/snippet}
 								</Pending>
 							</p>
 							<h3 class="mt-1 font-display text-step-1 text-fg">{apartment.name}</h3>
@@ -42,13 +42,22 @@
 						</Pending>
 					</ul>
 
-					<ul class="m-0 flex flex-wrap gap-x-[0.9rem] gap-y-[0.4rem] list-none p-0 text-[0.92rem] text-muted">
-						{#each apartment.features as feature (feature)}
-							<li class="before:mr-[0.45rem] before:inline-block before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-moss before:content-['']">
-								{feature}
-							</li>
+					<div class="grid gap-4 sm:grid-cols-2">
+						{#each apartment.groups as group (group.title)}
+							<div>
+								<p class="font-mono text-[0.78rem] tracking-[0.04em] text-muted uppercase">{group.title}</p>
+								<ul class="m-0 mt-[0.4rem] grid list-none gap-[0.3rem] p-0 text-[0.92rem] text-muted">
+									{#each group.items as item (item)}
+										<li
+											class="before:mr-[0.45rem] before:inline-block before:h-[0.45rem] before:w-[0.45rem] before:rounded-full before:bg-moss before:content-['']"
+										>
+											{item}
+										</li>
+									{/each}
+								</ul>
+							</div>
 						{/each}
-					</ul>
+					</div>
 				</article>
 			{/each}
 

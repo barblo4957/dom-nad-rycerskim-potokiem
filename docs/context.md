@@ -33,10 +33,15 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 - Łazienka + osobna toaleta, hol/salon z TV
 - Balkon
 
-### Apartament mały ⚠️ rozbieżność
-- nocowanie.pl: 2–4 os., dwa podwójne łóżka, łazienka z toaletą, aneks kuchenny, TV
-- Booking: „Apartament typu Standard z 1 sypialnią”, 2 sofy rozkładane, 2 osoby
-- → ustalić z właścicielką faktyczny stan i poprawić ogłoszenia
+### Apartament mały (Booking: „Apartament typu Standard z 1 sypialnią”)
+- 26 m², 1 sypialnia, 2 sofy rozkładane (potwierdzone przez właściciela ogłoszenia na Booking)
+- Kuchnia: płyta kuchenna, piekarnik, lodówka, mikrofala, czajnik, toster, zestaw do kawy i herbaty,
+  przybory kuchenne, stół / część jadalniana
+- Prywatna łazienka: wanna lub prysznic, suszarka do włosów
+- Balkon, taras, patio; widok na ogród, basen, góry i potok
+- TV z płaskim ekranem, biurko, żelazko, wentylator, suszarka do ubrań, gry planszowe, pościel, szafa, ogrzewanie
+- ⚠️ pojemność: Booking podaje 2 osoby, nocowanie.pl 2–4 osoby — ustalić z właścicielką faktyczny stan
+  i poprawić ogłoszenia (do publikacji: bezpieczny wariant „2 osoby”)
 
 ### Ceny (nocowanie.pl)
 - Apartament 4-os.: od 360 zł/noc
@@ -136,7 +141,8 @@ Zasada: na stronę trafiają wyłącznie fakty z tego pliku. Pozycje oznaczone �
 
 ## 8. Obecność w sieci (do aktualizacji po starcie strony)
 
-- Booking.com, Airbnb ⚠️ (link), nocowanie.pl, e-turysta.com, infoturystyka.pl, otonoclegi.pl, spaniewpolsce.pl
+- Booking.com: https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html
+- Airbnb ⚠️ (link), nocowanie.pl, e-turysta.com, infoturystyka.pl, otonoclegi.pl, spaniewpolsce.pl
 - Wszędzie: dodać link do strony, ujednolicić NAP, liczbę miejsc, ceny i udogodnienia
 
 ## 9. Frazy kluczowe (robocze)

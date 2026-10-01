@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { reviews } from '$lib/data/site';
+	import { reviews, onlinePresence } from '$lib/data/site';
 	import Pending from '$lib/components/Pending.svelte';
 </script>
 
@@ -17,6 +17,12 @@
 					<span class="text-[0.92rem] text-muted">
 						<strong class="block font-semibold text-fg">{score.label}</strong>
 						{score.source} · {score.count} opinii
+						{#if score.source === 'Booking.com'}
+							·
+							<a href={onlinePresence.bookingUrl} target="_blank" rel="noopener" class="text-water underline">
+								zobacz opinie na Booking.com
+							</a>
+						{/if}
 					</span>
 				</div>
 			{/each}

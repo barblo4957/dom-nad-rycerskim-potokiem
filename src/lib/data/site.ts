@@ -74,14 +74,20 @@ export const offer = {
 	priceNote: 'Ceny są orientacyjne i zależą od liczby osób. Zadzwoń, a gospodyni poda dokładną kwotę na wybrany termin.'
 };
 
+export interface AmenityGroup {
+	title: string;
+	items: string[];
+}
+
 export interface Apartment {
 	id: string;
 	name: string;
+	areaM2?: number;
 	capacity: PendingField<string>;
 	priceFrom: number;
 	priceUnit: string;
 	beds: PendingField<string[]>;
-	features: string[];
+	groups: AmenityGroup[];
 }
 
 export const apartments: Apartment[] = [
@@ -108,24 +114,65 @@ export const apartments: Apartment[] = [
 				'dodatkowo: sofa rozkładana'
 			]
 		),
-		features: ['kuchnia z piekarnikiem i zmywarką', 'łazienka + osobne WC', 'salon z TV', 'balkon']
+		groups: [
+			{
+				title: 'Kuchnia',
+				items: ['kuchenka elektryczna z piekarnikiem', 'lodówka', 'zmywarka', 'mikrofala', 'czajnik', 'toster', 'naczynia']
+			},
+			{ title: 'Łazienka', items: ['łazienka + osobna toaleta'] },
+			{ title: 'Salon i balkon', items: ['hol/salon z TV', 'balkon'] }
+		]
 	},
 	{
 		id: 'small',
 		name: 'Apartament mały',
+		areaM2: 26,
+		// Pojemność pozostaje pending: Booking podaje 2 osoby, nocowanie.pl 2–4.
+		// Łóżka (2 sofy rozkładane) są już potwierdzone przez właściciela ogłoszenia
+		// na Booking, niezależnie od sporu o pojemność.
 		capacity: unconfirmed(
 			'2–4 osoby',
-			'Rozbieżność: nocowanie.pl — 2–4 os., 2 łóżka podwójne; Booking — „Apartament typu Standard z 1 sypialnią", 2 sofy rozkładane, 2 osoby. Ustalić z właścicielką faktyczny stan i poprawić ogłoszenia.',
+			'Booking podaje 2 osoby, nocowanie.pl 2–4 osoby. Ustalić z właścicielką faktyczną pojemność i ujednolicić ogłoszenia.',
 			'2 osoby'
 		),
 		priceFrom: 360,
 		priceUnit: 'noc',
-		beds: unconfirmed(
-			['dwa łóżka podwójne'],
-			'Patrz rozbieżność w `capacity` — Booking podaje 2 sofy rozkładane zamiast łóżek podwójnych.',
-			['Szczegóły telefonicznie.']
-		),
-		features: ['aneks kuchenny', 'łazienka z WC', 'TV']
+		beds: confirmed(['sypialnia: 2 sofy rozkładane']),
+		groups: [
+			{
+				title: 'Kuchnia',
+				items: [
+					'płyta kuchenna',
+					'piekarnik',
+					'lodówka',
+					'mikrofala',
+					'czajnik',
+					'toster',
+					'zestaw do kawy i herbaty',
+					'przybory kuchenne',
+					'stół / część jadalniana'
+				]
+			},
+			{ title: 'Łazienka', items: ['prywatna łazienka', 'wanna lub prysznic', 'suszarka do włosów'] },
+			{
+				title: 'W apartamencie',
+				items: [
+					'TV z płaskim ekranem',
+					'biurko',
+					'żelazko',
+					'wentylator',
+					'suszarka do ubrań',
+					'gry planszowe',
+					'pościel',
+					'szafa',
+					'ogrzewanie'
+				]
+			},
+			{
+				title: 'Widok i taras',
+				items: ['balkon', 'taras', 'patio', 'widok na ogród, basen, góry i potok']
+			}
+		]
 	}
 ];
 
@@ -402,7 +449,8 @@ export const onlinePresence = {
 		'otonoclegi.pl',
 		'spaniewpolsce.pl'
 	],
-	airbnbUrl: unconfirmed<string | null>(null, 'Link do ogłoszenia na Airbnb — uzupełnić.')
+	airbnbUrl: unconfirmed<string | null>(null, 'Link do ogłoszenia na Airbnb — uzupełnić.'),
+	bookingUrl: 'https://www.booking.com/hotel/pl/dom-nad-rycerskim-potokiem.pl.html'
 };
 
 // --- Frazy kluczowe SEO (docs/context.md §9) --------------------------------

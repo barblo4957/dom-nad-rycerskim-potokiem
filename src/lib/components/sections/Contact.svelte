@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { contactCopy, nap } from '$lib/data/site';
+	import { contactCopy, nap, onlinePresence } from '$lib/data/site';
 	import { resolvePending } from '$lib/data/pending';
 	import Note from '$lib/components/Note.svelte';
 
@@ -20,6 +20,12 @@
 					{nap.phone}
 				</a>
 			</div>
+			<p class="mt-3 text-[0.9rem] text-on-forest/70">
+				Wolisz rezerwować online?
+				<a href={onlinePresence.bookingUrl} target="_blank" rel="noopener" class="text-on-forest underline">
+					Booking.com
+				</a>
+			</p>
 		</div>
 		<address class="grid gap-1 rounded-(--radius-token) border border-on-forest/20 p-6 not-italic">
 			<b class="font-display text-[1.25rem] text-on-forest">{nap.name}</b>

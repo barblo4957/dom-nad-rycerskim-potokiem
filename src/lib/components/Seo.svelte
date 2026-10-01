@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { nap, meta, reviews, visibleFaq, siteUrl } from '$lib/data/site';
+	import { nap, meta, reviews, visibleFaq, siteUrl, onlinePresence } from '$lib/data/site';
 	import { resolvePending } from '$lib/data/pending';
 
 	const geo = resolvePending(nap.geo);
@@ -23,6 +23,7 @@
 		description: meta.description,
 		telephone: nap.phone,
 		...(canonical ? { url: canonical } : {}),
+		sameAs: [onlinePresence.bookingUrl],
 		address: {
 			'@type': 'PostalAddress',
 			streetAddress: nap.street,

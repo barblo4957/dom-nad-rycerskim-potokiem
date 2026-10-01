@@ -69,9 +69,10 @@ src/lib/assets/photos/         # zdjęcia przez enhanced:img
 - W `site.ts` każde pole niepewne ma flagę, np. `{ value: '...', pending: 'Booking vs nocowanie — ustalić' }`.
 - `<Note>` renderuje się tylko gdy `PUBLIC_SHOW_NOTES === 'true'` (preview deploy dla właścicielki).
   Na produkcji: pole pending bez potwierdzonej wartości NIE jest wyświetlane.
-- Aktualna lista pending: internet/Wi-Fi, mały apartament (łóżka, liczba osób), opłata za psa,
-  godziny check-in/out, obiady z dowozem, pinezka geo, wyciągi narciarskie, odległości na Przegibek/Rycerzową,
-  zgoda na opinie, link Airbnb, zdjęcia tymczasowe z portali — podmienić na oryginały od właścicielki.
+- Aktualna lista pending: internet/Wi-Fi, mały apartament (liczba osób: Booking 2 vs nocowanie 2–4),
+  opłata za psa, godziny check-in/out, obiady z dowozem, pinezka geo, wyciągi narciarskie,
+  odległości na Przegibek/Rycerzową, zgoda na opinie, link Airbnb, zdjęcia tymczasowe z portali —
+  podmienić na oryginały od właścicielki.
 
 ## Jakość (Definition of Done)
 
