@@ -36,7 +36,7 @@
 
 	<div class="relative aspect-4/5 overflow-hidden rounded-(--radius-token) bg-forest md:aspect-4/3">
 		<enhanced:img
-			src="../../assets/photos/hero-dom-ogrod.webp"
+			src="../../assets/photos/hero-dom-ogrod-crop.webp"
 			alt="Dom nad Rycerskim Potokiem w Rycerce Górnej — widok od strony ogrodu"
 			sizes="(min-width: 768px) 520px, calc(100vw - 2rem)"
 			fetchpriority="high"

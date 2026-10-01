@@ -6,36 +6,32 @@
 	import altanaZGrillem from '$lib/assets/photos/altana-z-grillem.jpg?enhanced';
 	import salonHolTv from '$lib/assets/photos/salon-hol-tv.jpg?enhanced';
 
-	const photos = [
-		{
-			src: domZOgrodu,
-			alt: 'Dom nad Rycerskim Potokiem w Rycerce Górnej – widok od strony ogrodu',
-			caption: 'dom od strony ogrodu',
-			tall: true
-		},
+	const featured = {
+		src: domZOgrodu,
+		alt: 'Dom nad Rycerskim Potokiem w Rycerce Górnej – widok od strony ogrodu',
+		caption: 'dom od strony ogrodu'
+	};
+
+	const gridPhotos = [
 		{
 			src: potokPrzyDzialce,
 			alt: 'Rycerski Potok płynący tuż przy działce domu w Rycerce Górnej',
-			caption: 'potok przy działce',
-			tall: false
+			caption: 'potok przy działce'
 		},
 		{
 			src: basenILezaki,
 			alt: 'Odkryty basen i leżaki w ogrodzie domu wakacyjnego',
-			caption: 'basen i leżaki',
-			tall: false
+			caption: 'basen i leżaki'
 		},
 		{
 			src: altanaZGrillem,
 			alt: 'Altana z grillem w ogrodzie, miejsce na wspólne grillowanie',
-			caption: 'altana z grillem',
-			tall: false
+			caption: 'altana z grillem'
 		},
 		{
 			src: salonHolTv,
 			alt: 'Salon z telewizorem w apartamencie domu nad Rycerskim Potokiem',
-			caption: 'salon / hol z TV',
-			tall: false
+			caption: 'salon / hol z TV'
 		}
 	];
 </script>
@@ -51,24 +47,33 @@
 				{/each}
 			</div>
 		</div>
-		<div class="grid grid-cols-2 gap-[0.6rem]">
-			{#each photos as photo (photo.caption)}
-				<figure
-					class="relative m-0 flex items-end overflow-hidden rounded-(--radius-token) bg-surface p-[0.6rem] {photo.tall
-						? 'row-span-2 aspect-auto'
-						: 'aspect-4/3'}"
-				>
-					<enhanced:img
-						src={photo.src}
-						alt={photo.alt}
-						sizes="(min-width: 768px) 270px, 45vw"
-						class="absolute inset-0 h-full w-full object-cover"
-					/>
-					<figcaption class="relative rounded-[3px] bg-surface/85 px-[0.45rem] py-[0.2rem] font-mono text-[0.72rem] text-fg">
-						{photo.caption}
-					</figcaption>
-				</figure>
-			{/each}
+		<div class="grid gap-[0.6rem]">
+			<figure class="relative m-0 flex aspect-16/9 items-end overflow-hidden rounded-(--radius-token) bg-surface">
+				<enhanced:img
+					src={featured.src}
+					alt={featured.alt}
+					sizes="(min-width: 768px) 560px, calc(100vw - 2rem)"
+					class="absolute inset-0 h-full w-full object-cover"
+				/>
+				<figcaption class="relative m-[0.6rem] rounded-[3px] bg-surface/85 px-[0.45rem] py-[0.2rem] font-mono text-[0.72rem] text-fg">
+					{featured.caption}
+				</figcaption>
+			</figure>
+			<div class="grid grid-cols-2 gap-[0.6rem]">
+				{#each gridPhotos as photo (photo.caption)}
+					<figure class="relative m-0 flex aspect-16/9 items-end overflow-hidden rounded-(--radius-token) bg-surface">
+						<enhanced:img
+							src={photo.src}
+							alt={photo.alt}
+							sizes="(min-width: 768px) 270px, 45vw"
+							class="absolute inset-0 h-full w-full object-cover"
+						/>
+						<figcaption class="relative m-[0.6rem] rounded-[3px] bg-surface/85 px-[0.45rem] py-[0.2rem] font-mono text-[0.72rem] text-fg">
+							{photo.caption}
+						</figcaption>
+					</figure>
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
